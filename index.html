@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enatura</title>
+  <link rel="shortcut icon" href="./images/enatura logo (1).jpg">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Other head content -->
+  
+  
+
+  <style>
+    
+
+    /* Navbar */
+.navbar {
+  background-color: transparent !important; /* Transparent background */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar-brand {
+  color: #A3C644 !important; /* Green color for the brand */
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.navbar-nav .nav-link {
+  color: #FFFFFF !important; /* White text for nav links */
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #A3C644; /* Green background on hover */
+  color: white !important; /* Ensure text remains white */
+  border-radius: 30px; /* Rounded corners for the hover effect */
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: #A3C644; /* Green background for the toggler */
+}
+
+.navbar-toggler-icon {
+  background-color: #FFFFFF; /* White hamburger icon */
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+/* Mobile View: Center nav links */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 12px 0;
+  }
+
+  .navbar-toggler {
+    background-color: #A3C644; /* Green background for toggler */
+  }
+}
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(122, 62, 62, 0.1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .bi {
+        width: 1em;
+        height: 1em;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      
+      .modal.fade .modal-dialog {
+        animation: fadeInUp 0.5s ease-in-out;
+      }
+
+      .modal-content {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 1rem;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        color: #fff;
+      }
+      
+      .modal-title {
+        color: #ffffff;
+        font-weight: 600;
+      }
+      .modal-body h4 {
+        color: #fff;
+      }
+      .modal-body ul,
+      .modal-body p,
+      .modal-body li {
+        color: #f1f1f1;
+      }
+      
+      
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #carouselExample {
+        position: relative;
+      }
+      
+      .carousel-item img {
+        object-fit: cover;
+        height: 100vh; /* Adjust the height for full-screen coverage */
+      }
+      
+      .carousel-caption {
+        bottom: 20%; /* Position the text slightly higher */
+      }
+      
+      .carousel-caption h5 {
+        font-size: 3rem;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+      }
+      
+      .carousel-caption p {
+        font-size: 1.2rem;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      }
+      
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, 0.5); /* Darker control buttons for better visibility */
+      }
+      
+
+      /* General Body Styles */
+body {
+  background-color: #FFFFFF; /* White background for the website */
+  color: #6D6E71; /* Use the greyish tone for general text */
+  font-family: Arial, sans-serif;
+}
+
+
+/* Carousel */
+#carouselExample {
+  position: relative;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100vh;
+}
+
+.carousel-caption {
+  bottom: 20%;
+}
+
+.carousel-caption h5 {
+  font-size: 3rem;
+  color: #FFFFFF; /* White text for carousel captions */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  color: #FFFFFF; /* White text for carousel descriptions */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Section Headers */
+h2, h3, h5 {
+  color: #A3C644; /* Greenish color for headings */
+}
+
+section {
+  background-color: #F7F7F7; /* Light background color for sections */
+  padding: 60px 0;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #A3C644; /* Greenish button color */
+  border-color: #A3C644;
+}
+
+.btn-primary:hover {
+  background-color: #6D6E71; /* Grey button hover color */
+  border-color: #6D6E71;
+}
+
+/* Footer */
+footer {
+  background-color: #6D6E71; /* Grey footer background */
+  color: white;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+footer .container {
+  text-align: center;
+}
+
+/* Cards and Features */
+.feature {
+  background-color: #FFFFFF;
+  border: 1px solid #A3C644;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  background-color: #A3C644;
+  color: white;
+}
+
+.feature h3 {
+  color: #6D6E71; /* Grey color for feature headings */
+}
+
+.feature p {
+  color: #6D6E71; /* Grey color for feature description */
+}
+
+/* Forms */
+.form-control {
+  background-color: #F7F7F7;
+  color: #6D6E71;
+  border: 1px solid #A3C644;
+}
+
+.form-control:focus {
+  border-color: #A3C644;
+}
+
+/* Cards / Team Section */
+.card {
+  border: 1px solid #A3C644;
+  background-color: #FFFFFF;
+}
+
+.card-title {
+  color: #A3C644;
+}
+
+.card-text {
+  color: #6D6E71;
+}
+
+.card-footer {
+  background-color: #A3C644;
+  color: white;
+}
+
+.card-img-top {
+  border-radius: 10px;
+}
+
+      
+      
+    </style>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: rgb(195 208 235 / 25%) !important;">
+      <div class="container justify-content-center pt-4" style="margin-top: -17px;">
+        <a class="navbar-brand" href="./images/enatura logo (1).jpg">ENATURA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#featured-3">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#service">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</head>
+
+<body class="d-flex flex-column min-vh-100 text-bg-dark">
+
+  <section id="carousel" class="py-5">
+    <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img src="./images/4.jpg" class="d-block w-100" alt="Power Generation">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fw-bold text-dark">Innovating Power Solutions</h5>
+            <p class="text-dark">We provide state-of-the-art power generation technologies to fuel a sustainable future.</p>
+          </div>
+        </div>
+  
+        <!-- Slide 2 -->
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="./images/5.jpg" class="d-block w-100" alt="Environmental Solutions">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fw-bold text-light">Environmental Solutions</h5>
+            <p class="text-light">Our solutions prioritize the planet while ensuring operational efficiency and reliability.</p>
+          </div>
+        </div>
+  
+        <!-- Slide 3 -->
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="./images/6.jpg" class="d-block w-100" alt="HVAC Systems">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fw-bold text-dark">HVAC Systems</h5>
+            <p class="text-dark">We design, install, and maintain cutting-edge HVAC systems to optimize energy efficiency.</p>
+          </div>
+        </div>
+  
+        <!-- Slide 4 -->
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="./images/7.jpg" class="d-block w-100" alt="Renewable Energy">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fw-bold text-light">Renewable Energy</h5>
+            <p class="text-light">We are pioneers in renewable energy solutions, driving the transition to a greener future.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+  
+
+
+<!-- <div class="container-fluid mt-3">
+  <h3>Carousel Example</h3>
+  <p>The following example shows how to create a basic carousel with indicators and controls.</p>
+</div> -->
+
+
+  <!-- <div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./images/1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./images/2.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./images/enatura logo (1).jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> -->
+
+
+  <!--section--> 
+
+  <section id="about" class="py-5" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); color: #fff;">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-down">
+        <h2 class="fw-bold display-5">About Enatura LLC</h2>
+        <p class="lead">Sustainable Utility Solutions Built for the Future</p>
+      </div>
+  
+      <div class="row align-items-center">
+        <!-- Left: Image -->
+        <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
+          <img src="./images/7.jpg" class="img-fluid rounded shadow" alt="About Enatura">
+        </div>
+  
+        <!-- Right: Text -->
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="p-4 rounded shadow" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);">
+            <p><strong>Enatura LLC</strong> is a utility services company providing environmentally sound solutions, including equipment sales and services for power generation, electricity consumption, potable water, wastewater, and HVAC systems.</p>
+            <p>We focus on environmentally justified and economically viable results for public utilities, engineering firms, hotels, hospitals, schools, and industrial sites.</p>
+            <p>From steam generation and grey water systems to renewable energy and environmental consulting, we help implement planet-friendly infrastructure across Nigeria and beyond.</p>
+            <p>Our services include in-house system design, installation, operations & maintenance, and water quality testing for private clients and government bodies.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Mission / Vision Cards -->
+      <div class="row mt-5 g-4">
+        <div class="col-md-6" data-aos="zoom-in-up">
+          <div class="p-4 rounded shadow" style="background-color: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+            <h4 class="fw-bold">🌍 Our Mission</h4>
+            <p>To deliver innovative, eco-conscious utility solutions that empower communities, industries, and governments to achieve sustainable development goals.</p>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="zoom-in-up" data-aos-delay="100">
+          <div class="p-4 rounded shadow" style="background-color: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+            <h4 class="fw-bold">🚀 Our Vision</h4>
+            <p>To become Africa’s leading provider of sustainable infrastructure, inspiring cleaner, smarter, and greener environments for all.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <section id="service" style="background-color: rgb(195 208 235 / 25%) !important;">
+    <div class="container px-4 py-5" id="featured-3">
+      <h2 class="pb-2 border-bottom py-5">Our Services</h2>
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        
+        <!-- Power Generation Service -->
+        <div class="feature col">
+          <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
+            <i class="fas fa-bolt" style="font-size: 40px; color: #A3C644;"></i>
+          </div>
+          <h3 class="fs-2 text-body-emphasis">Power Generation</h3>
+          <p>Enatura provides reliable, cost-effective power solutions for industries facing rising electricity demands. They source and define point-of-consumption power systems, including generators, fuel cells, gas turbines, and combined cycles.</p>
+          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#serviceModal1">View More</button>
+        </div>
+
+        <!-- Electricity Consumption Optimization -->
+        <div class="feature col">
+          <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
+            <i class="fas fa-plug" style="font-size: 40px; color: #A3C644;"></i>
+          </div>
+          <h3 class="fs-2 text-body-emphasis">Electricity Consumption Optimization</h3>
+          <p>Enatura helps businesses reduce energy consumption, lower costs, and improve efficiency with tailored solutions for inductive motor power control.</p>
+          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#serviceModal2">View More</button>
+        </div>
+
+        <!-- Environmental Services -->
+        <div class="feature col">
+          <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
+            <i class="fas fa-leaf" style="font-size: 40px; color: #A3C644;"></i>
+          </div>
+          <h3 class="fs-2 text-body-emphasis">Environmental Services</h3>
+          <p>Enatura partners with global experts to deliver compliance consultancy, certified personnel, and sustainability services.</p>
+          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#serviceModal3">View More</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Modal for Power Generation -->
+<div class="modal fade" id="serviceModal1" tabindex="-1" aria-labelledby="serviceModalLabel1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="serviceModalLabel1">Power Generation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Enatura provides reliable, cost-effective power solutions for industries facing rising electricity demands. They source and define point-of-consumption power systems, including generators, fuel cells, gas turbines, and combined cycles. Their field services cover maintenance, troubleshooting, condition monitoring, and generator testing, ensuring optimal efficiency for hotels, hospitals, schools, and industrial sites.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Electricity Consumption Optimization -->
+<div class="modal fade" id="serviceModal2" tabindex="-1" aria-labelledby="serviceModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="serviceModalLabel2">Electricity Consumption Optimization</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Enatura helps businesses reduce energy consumption, lower costs, and improve efficiency with tailored solutions for inductive motor power control. Their cost-effective products guarantee energy savings, utility demand reduction, and decreased carbon emissions.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Environmental Services -->
+<div class="modal fade" id="serviceModal3" tabindex="-1" aria-labelledby="serviceModalLabel3" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="serviceModalLabel3">Environmental Services</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Enatura partners with global experts to deliver compliance consultancy, certified personnel, and sustainability services. Their capabilities include environmental studies on freshwater, wetlands, marine ecosystems, wildlife, endangered species, and transportation. They ensure consistent, professional solutions for managing and operating facilities, whether compliant or non-compliant, while addressing health, safety, risk, and social consulting needs.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+
+  <!-- Modal -->
+<div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="serviceModalLabel">Service Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="serviceModalBody">
+        <!-- Dynamic content goes here -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="team" class="py-5 bg-dark text-white">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold display-5">Meet Our Team</h2>
+      <p class="lead">Dedicated professionals committed to powering a greener future.</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Team Member 1 -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="card bg-secondary text-white border-0 h-100 text-center shadow-lg">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="card-img-top rounded-top" alt="John Smith">
+          <div class="card-body">
+            <h5 class="card-title mb-0">John Smith</h5>
+            <p class="text-muted small mb-2">Chief Operations Officer</p>
+            <div class="mb-3">
+              <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+            </div>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#bio1">Read Bio</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Member 1 -->
+      <div class="modal fade" id="bio1" tabindex="-1" aria-labelledby="bio1Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content bg-dark text-white">
+            <div class="modal-header border-0">
+              <h5 class="modal-title" id="bio1Label">John Smith - Chief Operations Officer</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              John brings 15+ years of experience in power generation operations and logistics. He ensures seamless service delivery and operational excellence at Enatura.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="card bg-secondary text-white border-0 h-100 text-center shadow-lg">
+          <img src="https://randomuser.me/api/portraits/women/45.jpg" class="card-img-top rounded-top" alt="Angela Brooks">
+          <div class="card-body">
+            <h5 class="card-title mb-0">Angela Brooks</h5>
+            <p class="text-muted small mb-2">Sustainability Lead</p>
+            <div class="mb-3">
+              <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+            </div>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#bio2">Read Bio</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Member 2 -->
+      <div class="modal fade" id="bio2" tabindex="-1" aria-labelledby="bio2Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content bg-dark text-white">
+            <div class="modal-header border-0">
+              <h5 class="modal-title" id="bio2Label">Angela Brooks - Sustainability Lead</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Angela is a sustainability strategist with a focus on renewable integration and ESG goals. She's passionate about clean tech and energy equity.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 3 -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="card bg-secondary text-white border-0 h-100 text-center shadow-lg">
+          <img src="https://randomuser.me/api/portraits/men/15.jpg" class="card-img-top rounded-top" alt="David Adeyemi">
+          <div class="card-body">
+            <h5 class="card-title mb-0">David Adeyemi</h5>
+            <p class="text-muted small mb-2">Technical Director</p>
+            <div class="mb-3">
+              <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+            </div>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#bio3">Read Bio</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Member 3 -->
+      <div class="modal fade" id="bio3" tabindex="-1" aria-labelledby="bio3Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content bg-dark text-white">
+            <div class="modal-header border-0">
+              <h5 class="modal-title" id="bio3Label">David Adeyemi - Technical Director</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              David oversees all project technicalities, from design to installation. With an engineering background, he’s known for his problem-solving abilities and innovation.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 4 -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+        <div class="card bg-secondary text-white border-0 h-100 text-center shadow-lg">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" class="card-img-top rounded-top" alt="Lilian Obasi">
+          <div class="card-body">
+            <h5 class="card-title mb-0">Lilian Obasi</h5>
+            <p class="text-muted small mb-2">Environmental Analyst</p>
+            <div class="mb-3">
+              <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+            </div>
+            <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#bio4">Read Bio</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Member 4 -->
+      <div class="modal fade" id="bio4" tabindex="-1" aria-labelledby="bio4Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content bg-dark text-white">
+            <div class="modal-header border-0">
+              <h5 class="modal-title" id="bio4Label">Lilian Obasi - Environmental Analyst</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Lilian leads environmental assessments and impact analysis. Her research helps guide project sustainability and compliance with global regulations.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Contack Section -->
+<section id="contact" class="py-5" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); color: #fff;">
+  <div class="container">
+    <h2 class="text-center mb-5">Get in Touch</h2>
+    <div class="row g-4">
+      
+      <!-- Contact Info -->
+      <div class="col-md-5">
+        <div class="p-4 rounded shadow" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);">
+          <h5 class="mb-3">Contact Info</h5>
+          <p><strong>Address:</strong><br>123 Enatura Street,<br>Green Energy District,<br>Lagos, Nigeria</p>
+          <p><strong>Email:</strong><br>info@enatura.fake</p>
+          <p><strong>Phone:</strong><br>+234 800 000 0000</p>
+          <p><strong>Hours:</strong><br>Mon - Fri: 9am – 5pm<br>Sat & Sun: Closed</p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-md-7">
+        <div class="p-4 rounded shadow" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);">
+          <h5 class="mb-3">Send a Message</h5>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Your Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Type your message here..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-light">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.querySelector("form");
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Message sent! We'll get back to you shortly.");
+    form.reset();
+  });
+</script>
+
+<script>
+  AOS.init();
+</script>
+
+
+</body>
+
+<footer class="bg-dark text-white mt-auto py-4">
+  <div class="container text-center">
+    <p class="mb-0">&copy; <span id="currentYear"></span> ENATURA LLC NIGERIA Energy Solutions. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // JavaScript to dynamically update the copyright year
+  const yearSpan = document.getElementById('currentYear');
+  const currentYear = new Date().getFullYear();
+  yearSpan.textContent = currentYear;
+</script>
+
+<script>
+  const serviceContent = {
+    power: `
+      <h4>Power Generation</h4>
+      <p>Enatura’s power generation services are tailored to meet industrial and institutional energy demands. We offer point-of-consumption systems such as:</p>
+      <ul>
+        <li>Diesel and gas generators</li>
+        <li>Fuel cells and gas turbines</li>
+        <li>Combined cycle power plants</li>
+      </ul>
+      <p>Our services also include remote monitoring, diagnostics, and round-the-clock field support for mission-critical operations.</p>
+    `,
+    optimization: `
+      <h4>Electricity Consumption Optimization</h4>
+      <p>We empower clients to lower operational costs and carbon footprints by:</p>
+      <ul>
+        <li>Optimizing inductive motor loads</li>
+        <li>Reducing reactive power losses</li>
+        <li>Custom smart energy solutions with rapid ROI</li>
+      </ul>
+      <p>Our tech ensures sustainability without compromising productivity.</p>
+    `,
+    environment: `
+      <h4>Environmental Services</h4>
+      <p>Enatura ensures regulatory compliance and sustainability through:</p>
+      <ul>
+        <li>Environmental Impact Assessments (EIAs)</li>
+        <li>Wildlife and ecosystem studies</li>
+        <li>Waste and emissions management plans</li>
+      </ul>
+      <p>We partner with certified professionals to deliver excellence in every environmental consultancy project.</p>
+    `
+  };
+  
+  function showDetails(type) {
+    const modalBody = document.getElementById("serviceModalBody");
+    modalBody.innerHTML = serviceContent[type];
+    const serviceModal = new bootstrap.Modal(document.getElementById("serviceModal"));
+    serviceModal.show();
+  }
+  
+</script>
